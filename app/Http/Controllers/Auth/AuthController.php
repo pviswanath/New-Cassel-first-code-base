@@ -120,5 +120,9 @@ class AuthController extends Controller
         return $request->only($this->loginUsername(), 'password', 'active', 'deleted_at');
     }
 
+    public function emailPassword()
+    {
+        return view('auth.passwords.email');
+    }
 
 }

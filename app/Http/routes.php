@@ -78,6 +78,8 @@ Route::get('laravel-version', function()
 
 //});
 
+Route::get('/reset', 'Auth\AuthController@emailPassword');
+
 Route::post('/password/sendemail', function () {
 
     $data = array(

@@ -55,7 +55,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i>Login
                                 </button>
 
-                                <a class="btn btn-link" href="<?php echo e(url('/password/reset')); ?>">Forgot Password?</a>
+                                <a class="btn btn-link" href="<?php echo e(url('/reset')); ?>">Forgot Password?</a>
 
                             </div>
                         </div>

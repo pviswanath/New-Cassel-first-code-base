@@ -56,7 +56,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i>Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Password?</a>
+                                <a class="btn btn-link" href="{{ url('/reset') }}">Forgot Password?</a>
 
                             </div>
                         </div>
