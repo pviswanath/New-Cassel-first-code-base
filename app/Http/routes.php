@@ -78,10 +78,14 @@ Route::get('laravel-version', function()
 
 //});
 
-Route::get('/reset', 'Auth\AuthController@emailPassword');
+Route::get('/reset', 'Auth\AuthController@showPasswordEmailPage');
 
-Route::post('/password/sendemail', function () {
+Route::get('/createPassword', 'Auth\PasswordController@showUserPasswordChange');
 
+Route::post('/createNewPassword', 'Auth\PasswordController@createNewPassword');
+
+
+/*
     $data = array(
         'name' => "New Cassel",
     );
@@ -96,4 +100,21 @@ Route::post('/password/sendemail', function () {
 
     return "Your email has been sent successfully";
 
+});*/
+
+
+Route::post('/sendemail', function () {
+
+    $data = array(
+        'name' => $_POST['email'],
+    );
+
+    Mail::send('emails.welcome', $data, function ($message) {
+
+        $message->from('newcassel@domain.com', 'New Cassel Work Order System');
+        $message->to($_POST['email'])->subject('Password Setup');
+
+    });
+
+    return view('auth.passwords.emailconfirmation');
 });
