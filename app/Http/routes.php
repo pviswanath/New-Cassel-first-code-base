@@ -23,15 +23,6 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-
-//Route::get('/ContactUs', function () {
-   // return view('ContactUs');
-//});
-
-//Route::get('/About', function () {
-//   return view('About');
-//});
-
 Route::get('php-version', function()
 {
     return phpinfo();
@@ -54,8 +45,7 @@ Route::get('laravel-version', function()
 |
 */
 
-//Route::group(['middleware' => 'web'], function () {
-    Route::auth();
+     Route::auth();
     Route::post('change-password', 'Auth\AuthController@updatePassword');
     Route::get( 'change-password', 'Auth\AuthController@updatePassword');
 
@@ -69,38 +59,13 @@ Route::get('laravel-version', function()
 
     Route::get('/redirect', 'SocialAuthController@redirect');
     Route::get('/callback', 'SocialAuthController@callback');
-//    Route::delete('/comments/{comment}', 'CommentsController@destroy');
-//    Route::resource('comments', 'CommentsController');
-//    Route::get('comments/{student}/addforstudent', ['as' => 'comments.addforstudent',
-//        'uses' => 'CommentsController@addforstudent']);
-//    Route::get('comments/{planofstudy}/addforplanofstudy', ['as' => 'comments.addforplanofstudy',
-//        'uses' => 'CommentsController@addforplanofstudy']);
 
-//});
 
 Route::get('/reset', 'Auth\AuthController@showPasswordEmailPage');
 
 Route::get('/createPassword', 'Auth\PasswordController@showUserPasswordChange');
 
 Route::post('/createNewPassword', 'Auth\PasswordController@createNewPassword');
-
-
-/*
-    $data = array(
-        'name' => "New Cassel",
-    );
-
-    Mail::send('emails.welcome', $data, function ($message) {
-
-        $message->from('newcassel@domain.com', 'New Cassel Work Order System');
-
-        $message->to($_POST['email'])->subject('Password Setup');
-
-    });
-
-    return "Your email has been sent successfully";
-
-});*/
 
 
 Route::post('/sendemail', function () {

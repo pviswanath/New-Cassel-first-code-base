@@ -12,7 +12,7 @@
 
             <!-- Branding Image -->
             {{--<a class="navbar-brand" href="{{ url('/') }}">Laravel</a>--}}
-            <div class="pull-left"><img src="images/New_Cassel.png" style="height: 48px;"></div>
+            <div class="pull-left"> <img src="images/New_Cassel.png" style="height: 48px;"></div>
             <a class="navbar-brand" href="{{ url('/') }}">
                 &nbsp New Cassel Work Order System
             </a>
