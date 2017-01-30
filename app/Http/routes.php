@@ -57,8 +57,8 @@ Route::get('laravel-version', function()
     Route::resource('users', 'UsersController');
     Route::resource('roles', 'RolesController');
 
-    Route::get('/redirect', 'SocialAuthController@redirect');
-    Route::get('/callback', 'SocialAuthController@callback');
+/*    Route::get('/redirect', 'SocialAuthController@redirect');
+    Route::get('/callback', 'SocialAuthController@callback');*/
 
 
 Route::get('/reset', 'Auth\AuthController@showPasswordEmailPage');
