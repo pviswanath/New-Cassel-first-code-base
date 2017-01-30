@@ -1,0 +1,89 @@
+[2017-01-29 00:41:43] local.INFO: UsersController.index:   
+[2017-01-29 00:41:50] local.INFO: RolesController.index:   
+[2017-01-29 00:41:59] local.INFO: UsersController.index:   
+[2017-01-29 00:42:01] local.INFO: UsersController.create:   
+[2017-01-29 00:57:56] local.INFO: UsersController.index:   
+[2017-01-29 00:57:59] local.INFO: UsersController.edit: 4|Administrator  
+[2017-01-29 00:58:11] local.INFO: RolesController.index:   
+[2017-01-29 00:58:15] local.INFO: RolesController.edit: 1|admin  
+[2017-01-29 00:58:22] local.INFO: UsersController.index:   
+[2017-01-29 00:58:25] local.INFO: RolesController.index:   
+[2017-01-29 00:58:46] local.INFO: UsersController.index:   
+[2017-01-29 00:58:50] local.INFO: RolesController.index:   
+[2017-01-29 00:59:03] local.INFO: RolesController.index:   
+[2017-01-29 00:59:05] local.INFO: RolesController.edit: 1|admin  
+[2017-01-29 00:59:10] local.INFO: UsersController.index:   
+[2017-01-29 00:59:11] local.INFO: UsersController.create:   
+[2017-01-29 06:17:12] local.INFO: UsersController.index:   
+[2017-01-29 06:25:00] local.INFO: UsersController.index:   
+[2017-01-29 06:25:03] local.INFO: RolesController.index:   
+[2017-01-29 06:25:07] local.INFO: RolesController.create:   
+[2017-01-29 06:27:23] local.INFO: UsersController.index:   
+[2017-01-29 06:27:27] local.INFO: UsersController.create:   
+[2017-01-29 06:33:46] local.INFO: UsersController.index:   
+[2017-01-29 06:33:48] local.INFO: UsersController.create:   
+[2017-01-29 06:55:18] local.ERROR: Swift_RfcComplianceException: Address in mailbox given [newcassel.com] does not comply with RFC 2822, 3.6.2. in /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php:347
+Stack trace:
+#0 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php(263): Swift_Mime_Headers_MailboxHeader->_assertValidAddress('newcassel.com')
+#1 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php(106): Swift_Mime_Headers_MailboxHeader->normalizeMailboxes(Array)
+#2 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/Headers/MailboxHeader.php(63): Swift_Mime_Headers_MailboxHeader->setNameAddresses(Array)
+#3 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMimeEntity.php(592): Swift_Mime_Headers_MailboxHeader->setFieldBodyModel(Array)
+#4 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mime/SimpleMessage.php(219): Swift_Mime_SimpleMimeEntity->_setHeaderFieldModel('From', Array)
+#5 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Mail/Message.php(37): Swift_Mime_SimpleMessage->setFrom(Array, 'New Cassel Admi...')
+#6 /Users/amuthuraj/Desktop/Capstone/New_Cassel/app/Http/routes.php(89): Illuminate\Mail\Message->from('newcassel.com', 'New Cassel Admi...')
+#7 [internal function]: App\Providers\RouteServiceProvider->{closure}(Object(Illuminate\Mail\Message))
+#8 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(403): call_user_func(Object(Closure), Object(Illuminate\Mail\Message))
+#9 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(163): Illuminate\Mail\Mailer->callMessageBuilder(Object(Closure), Object(Illuminate\Mail\Message))
+#10 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(221): Illuminate\Mail\Mailer->send('emails.welcome', Array, Object(Closure))
+#11 /Users/amuthuraj/Desktop/Capstone/New_Cassel/app/Http/routes.php(93): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#12 [internal function]: App\Providers\RouteServiceProvider->{closure}()
+#13 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(158): call_user_func_array(Object(Closure), Array)
+#14 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Route.php(137): Illuminate\Routing\Route->runCallable(Object(Illuminate\Http\Request))
+#15 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(724): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#17 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#18 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#19 [internal function]: Illuminate\Foundation\Http\Middleware\VerifyCsrfToken->handle(Object(Illuminate\Http\Request), Object(Closure))
+#20 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#21 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#22 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#23 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/View/Middleware/ShareErrorsFromSession.php(49): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#24 [internal function]: Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#25 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#26 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#28 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Session/Middleware/StartSession.php(64): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#29 [internal function]: Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#31 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#32 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#33 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/AddQueuedCookiesToResponse.php(37): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#34 [internal function]: Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#35 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#36 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#37 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#38 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Cookie/Middleware/EncryptCookies.php(59): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#39 [internal function]: Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#40 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#41 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#42 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#43 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#44 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#45 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(726): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#46 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(699): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#47 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Router.php(675): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#48 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(246): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#49 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#50 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(52): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#51 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/CheckForMaintenanceMode.php(44): Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#52 [internal function]: Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#53 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(136): call_user_func_array(Array, Array)
+#54 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#55 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Routing/Pipeline.php(32): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#56 [internal function]: Illuminate\Routing\Pipeline->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#57 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(102): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#58 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(132): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#59 /Users/amuthuraj/Desktop/Capstone/New_Cassel/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(99): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#60 /Users/amuthuraj/Desktop/Capstone/New_Cassel/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#61 /Users/amuthuraj/Desktop/Capstone/New_Cassel/server.php(21): require_once('/Users/amuthura...')
+#62 {main}  
